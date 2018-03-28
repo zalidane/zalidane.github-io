@@ -8,8 +8,8 @@
     <script type="text/javascript">
         $(function () {
             $('.pop').on('click', function () {
-                $('.enlargeImageModalSource').attr('src', $(this).find('img').attr('src'));
-                $('#enlargeImageModal').modal('show');
+                $('.imageModalSource').attr('src', $(this).find('img').attr('src'));
+                $('#imageModal').modal('show');
             });
         });
 
@@ -41,12 +41,18 @@
             <img alt="Project 3" src="Images/CAP.png" style="width: 50%; height:auto;" />
         </div>
     </div>
-    <div class="modal modal-wide fade" id="enlargeImageModal" tabindex="-1" role="dialog" aria-labelledby="enlargeImageModal" aria-hidden="true">
-        <div class="modal-dialog modal-open">
+    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModal" aria-hidden="true">
+        <div class="modal-dialog">
             <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title" id="modalLabel">Image</h4>
+                </div>
                 <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <img src="" class="enlargeImageModalSource" style="width:100%; height:auto;" />
+                    <img src="" class="imageModalSource" style="width:100%; height:auto;" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
