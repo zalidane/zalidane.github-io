@@ -1,8 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>GitHub Pages Test</title>
+  <head runat="server">
+    <title>My Portfolio</title>
+    <script type="text/javascript" src="Scripts/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="Content/bootstrap.min.css" type="text/css"/>
+    <script type="text/javascript">
+        $(function () {
+            $('.pop').on('click', function () {
+                $('.enlargeImageModalSource').attr('src', $(this).find('img').attr('src'));
+                $('#enlargeImageModal').modal('show');
+            });
+        });
+
+        $('.modal-wide').on("show.bs.modal", function () {
+            var height = $(window).height() - 200;
+            $(this).find(".modal-body").css("max-heght", height);
+        });
+    </script>
+    <style>
+        .modal.modal-wide .modal-dialog{
+            width: 90%;
+        }
+    </style>
 </head>
 <body>
   <h1>Hello GitHub Pages!</h1>
